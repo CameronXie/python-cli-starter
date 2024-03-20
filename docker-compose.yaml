@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  dev:
+    container_name: cli_starter_dev
+    build:
+      context: .
+      dockerfile: docker/dev/Dockerfile
+    platform: linux/amd64
+    volumes:
+      - './:/var/code'
+    working_dir: '/var/code'
+    command: [ '/bin/sh', '-c', 'tail -f /dev/null' ]
+    restart: always
